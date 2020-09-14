@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
             else
             {
                 val name = "${ed_name.text}"
-                Log.e("Awei","s:" + name.length)
-                Log.e("Awei","xxxxx")
                 tv_name.text = name
                 tv_our.text = "${ if(btn_scissor.isChecked)"剪刀"
                 else if(btn_stone.isChecked)"石頭"
@@ -66,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 
     fun showAlert(mContex:Context)
     {
-        Log.e("Awei","err")
         AlertDialog.Builder(mContex)
             .setTitle("姓名未輸入")
             .setMessage("姓名未輸入,請輸入姓名")
