@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lab7</string>
+
+    <integer-array name="fruit_list">
+        <item>@drawable/png_apple</item>
+        <item>@drawable/png_avocado</item>
+        <item>@drawable/png_banana</item>
+        <item>@drawable/png_cherries</item>
+        <item>@drawable/png_coconut</item>
+        <item>@drawable/png_grapes</item>
+        <item>@drawable/png_lemon</item>
+        <item>@drawable/png_orange</item>
+        <item>@drawable/png_peach</item>
+        <item>@drawable/png_pineapple</item>
+        <item>@drawable/png_strawberry</item>
+        <item>@drawable/png_tomato</item>
+    </integer-array>
+</resources>
