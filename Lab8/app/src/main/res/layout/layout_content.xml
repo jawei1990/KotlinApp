@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutContent">
+
+    <TextView
+        android:id="@+id/strName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="姓名:"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="15"
+        android:hint="請輸入姓名"
+        app:layout_constraintStart_toEndOf="@id/strName"
+        app:layout_constraintTop_toTopOf="@id/strName" />
+
+
+    <TextView
+        android:id="@+id/tv_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="電話:"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        app:layout_constraintTop_toBottomOf="@+id/strName"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/ed_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="請輸入電話號碼"
+        android:ems="15"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@+id/ed_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_tel"/>
+
+    <Button
+        android:id="@+id/BtnCancel"
+        android:layout_width="300px"
+        android:layout_height="200px"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="30px"
+        android:text="取消並返回"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tel"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/BtnOK"
+        android:layout_width="300px"
+        android:layout_height="200px"
+        android:layout_marginTop="100px"
+        android:layout_marginRight="30px"
+        android:text="新增"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tel"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
