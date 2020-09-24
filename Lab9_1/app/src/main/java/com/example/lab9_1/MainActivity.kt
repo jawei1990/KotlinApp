@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     private var rab_progress = 0
     private var tot_progress = 0
 
-
-
+    private var rab_cnt = 0
+    private var tol_cnt = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
             sb_rabblit.progress = 0
             sb_totle.progress = 0
+
+            rab_cnt = 0
+            tol_cnt = 0
 
             runThread() // 處理Random 兔子移動
             runAyncTask() // 處理烏龜移動
@@ -51,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                         e.printStackTrace()
                     }
 
+                    rab_cnt++
                     rab_progress += (Math.random() * 3).toInt()
                     val msg = Message()
                     msg.what = 1
@@ -65,6 +69,9 @@ class MainActivity : AppCompatActivity() {
         {
             1->sb_rabblit.progress = rab_progress
         }
+
+        val data:String = "t_cnt:" + tol_cnt.toString() + ",r_cnt:" + rab_cnt.toString()
+        tv_log.text = data
 
         if(rab_progress >= 100 && tot_progress < 100)
         {
@@ -90,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                         e.printStackTrace()
                     }
 
+                    tol_cnt++
                     tot_progress += (Math.random()*3).toInt()
                     publishProgress(tot_progress)
                 }
@@ -101,6 +109,8 @@ class MainActivity : AppCompatActivity() {
                 super.onProgressUpdate(*values)
                 values[0]?.let {
                     sb_totle.progress = it
+                    val data:String = "t_cnt:" + tol_cnt.toString() + ",r_cnt:" + rab_cnt.toString()
+                    tv_log.text = data
                 }
             }
 
