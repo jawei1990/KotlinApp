@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="體脂肪計算機"
+        android:textSize="36dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_hight"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="身高:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+
+    <EditText
+        android:id="@+id/ed_hight"
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="30px"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toEndOf="@+id/tv_hight"/>
+
+    <TextView
+        android:id="@+id/tv_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="體重:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hight"/>
+
+    <EditText
+        android:id="@+id/ed_weight"
+        android:layout_width="700px"
+        android:layout_height="150px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="30px"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hight"
+        app:layout_constraintStart_toEndOf="@+id/tv_weight"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="10px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight">
+        <RadioButton
+            android:id="@+id/rb_man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:text="男生"
+            android:textSize="20dp"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rb_girl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:text="女生"
+            android:textSize="20dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="wrap_content"
+        android:layout_height="200px"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="75px"
+        android:text="計算"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="50px"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"
+        app:layout_constraintStart_toEndOf="@+id/btnOK">
+        <TextView
+            android:id="@+id/tv_stand"
+            android:layout_width="350px"
+            android:layout_height="200px"
+            android:gravity="center"
+            android:text="@string/defualt_weigth"
+            android:textSize="16dp"
+            android:autoSizeTextType="uniform"/>
+        <TextView
+            android:id="@+id/tv_fat"
+            android:layout_width="350px"
+            android:layout_height="200px"
+            android:gravity="center"
+            android:text="@string/defualt_fat"
+            android:textSize="16dp"
+            android:autoSizeTextType="uniform"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#cc000000"
+        android:clickable="true"
+        android:visibility="invisible"
+        android:elevation="3dp">
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:progress="0"/>
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="0%"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

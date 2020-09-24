@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Lab9-2</string>
+
+    <string name="defualt_weigth">標準體重 \n 無</string>
+    <string name="defualt_fat">體脂肪 \n 無</string>
+</resources>
