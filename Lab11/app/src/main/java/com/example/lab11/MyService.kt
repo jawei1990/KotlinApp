@@ -44,7 +44,7 @@ class MyService : Service() {
                         s = 0
                         m++
 
-                        if(m>=0)
+                        if(m>=60)
                         {
                             m = 0
                             h++
