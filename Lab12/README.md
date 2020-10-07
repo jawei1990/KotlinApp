@@ -16,4 +16,4 @@ An immutable class representing a pair of latitude and longitude coordinates, st
 5.PolylineOption 相關設定可參考: https://www.oxxostudio.tw/articles/201802/google-maps-9-polyline.html
 
 ### Screen Shot
-![image](https://github.com/jawei1990/KotlinApp/Lab12/pic/ScreenShots.png)
+![image](https://github.com/jawei1990/KotlinApp/blob/master/Lab12/pic/ScreenShots.png)
