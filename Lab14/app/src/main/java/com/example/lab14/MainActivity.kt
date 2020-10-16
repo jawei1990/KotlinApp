@@ -58,8 +58,9 @@ class MainActivity : AppCompatActivity() {
 
         btnSearch.setOnClickListener()
         {
-            val req = Request.Builder().url("https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire" +
-                    "&rid=55ec6d6e-dc5c-4268-a725-d04cc262172b").build()
+            val req = Request.Builder()
+                .url("https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire" +
+                        "&rid=55ec6d6e-dc5c-4268-a725-d04cc262172b").build()
             OkHttpClient().newCall(req).enqueue(object:Callback
             {
                 override fun onResponse(call: Call, response: Response) {
