@@ -4,10 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -33,7 +30,7 @@ fun AddTodoDialog(onDismiss:()->Unit,onSave:(TodoItem)->Unit)
         {
             Box(modifier = Modifier.clip(RoundedCornerShape(8.dp))
                 .clickable(enabled = false){}
-                .background(Color.White))
+                .background( MaterialTheme.colors.background))
             {
                 Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(8.dp))
                 {
@@ -41,7 +38,7 @@ fun AddTodoDialog(onDismiss:()->Unit,onSave:(TodoItem)->Unit)
                     TextField(
                         value = text,
                         onValueChange = setText,
-                        colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White),
+                        colors = TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.background),
                         label = {Text(text = "TODO")}
                     )
 
